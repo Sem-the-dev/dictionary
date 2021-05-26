@@ -1,11 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Dictionary from './Dictionary'
 
 function App() {
   return (
+    <div className="App">
+      
     <main>
       <h1>Dictionary</h1>
+      <Dictionary />
     </main>
+    <footer>
+      Coded by sem-the-dev 👩🏾‍💻 
+    </footer>
+    </div>
   );
 }
 
