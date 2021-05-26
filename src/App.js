@@ -1,9 +1,10 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 function App() {
   return (
     <main>
-      <h1>React app template</h1>
+      <h1>Dictionary</h1>
     </main>
   );
 }

@@ -1,8 +1,8 @@
-# Template react 
-For a basic react template
+# Dictionary app
+url: 
 
 ## Installation 
-`npm i react`
+`npm instal`
 `npm i react-dom`
 
 ## Usage
