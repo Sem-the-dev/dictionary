@@ -4,14 +4,13 @@ import Dictionary from './Dictionary'
 function App() {
   return (
     <div className="App">
-      
-    <main>
-      <h1>Dictionary</h1>
-      <Dictionary />
-    </main>
-    <footer>
-      Coded by sem-the-dev 👩🏾‍💻 
-    </footer>
+      <main style={{ "text-align": "center" }}>
+        <h1>Dictionary</h1>
+        <Dictionary />
+      </main>
+      <footer style={{ "text-align": "center" }}>
+        Coded by sem-the-dev 👩🏾‍💻
+      </footer>
     </div>
   );
 }
