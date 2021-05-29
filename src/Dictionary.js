@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import Results from './Results'
 
 export default function Dictionary() {
   const [searchWord, setSearchWord] = useState("");
@@ -8,7 +9,7 @@ export default function Dictionary() {
 
   function searchDictionary(e) {
     e.preventDefault();
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${searchWord}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_GB/${searchWord}`;
     axios.get(apiUrl).then(handleResponse);
     alert(keyword);
   }
@@ -36,19 +37,8 @@ export default function Dictionary() {
       <form onSubmit={searchDictionary}>
         <input type="search" autoFocus={true} onChange={inputValue} />
       </form>
-      <h3>{responseData.word}</h3>
-      <p style={{ "font-style": "italic" }}>{responseData.phonetics}</p>
-      <ol>
-        <li>
-          {responseData.wordType1}: {responseData.definition1}
-        </li>
-        <br />
-        <li>
-          {responseData.wordType2}
-          : {responseData.definition2}
-        </li>
-      </ol>
-      <p> </p>
+
+      <Results result={responseData}/>
     </div>
   );
 }
