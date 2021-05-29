@@ -1,0 +1,39 @@
+/* body{
+    background-image: url("../public/books_background.jpg")
+} */
+main {
+     text-align: center;
+     
+}
+h1{
+   margin-top: 2rem;
+   font-family: 'Roboto Mono', monospace;
+}
+h3{
+   margin-top: 4rem;
+   font-family: 'Nanum Gothic', sans-serif;
+}
+input{
+    border-radius: 10px;
+    border: solid gray 1px;
+    top: 3rem;
+    position: relative;
+    width: 40%;
+}
+footer {
+    text-align: center;
+    display: inline;
+    position: fixed;
+    bottom: 1rem;
+    width: 100%;
+}
+
+.phonetics {
+   font-style: italic
+}
+
+.result-list {
+   list-style-type: none; 
+   text-align: left;
+   font-family: 'Nanum Gothic', sans-serif;
+}
