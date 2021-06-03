@@ -14,15 +14,19 @@ h1{
 }
 
 h3{
-   margin-top: 4rem;
+   margin-top: 5rem;
    font-family: 'Nanum Gothic', sans-serif;
+
 }
 input{
     border-radius: 10px;
-    border: solid gray 1px;
+    border: solid  rgba(218, 32, 189, 0.7) 2px;
     top: 3rem;
     position: relative;
     width: 40%;
+    box-shadow: 10px 10px 20px rgba(102, 90, 90, 0.2);
+    text-align: center
+  
 }
 footer {
     text-align: center;
@@ -30,12 +34,14 @@ footer {
     position: fixed;
     bottom: 0rem;
     width: 100%;
-    background-color: red;
+    background-color: snow;
     height: 6%;
+    padding: 0.5rem;
 }
 
 .phonetics {
-   font-style: italic
+   font-style: italic;
+   
 }
 
 .result-list {
@@ -45,9 +51,10 @@ footer {
 }
 
 .word-type{
-   color:red
+   color: plum
 }
 .example{
    font-style:italic;
    font-size: .85rem;
+   color: green
 }
