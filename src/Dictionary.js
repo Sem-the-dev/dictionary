@@ -11,25 +11,28 @@ export default function Dictionary() {
     e.preventDefault();
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_GB/${searchWord}`;
     axios.get(apiUrl).then(handleResponse);
-    alert(keyword);
+    
   }
   function inputValue(e) {
     setSearchWord(e.target.value);
   }
 
   function handleResponse(response){
-      setResponseData({
-        word: response.data[0].word,
-        phonetics: response.data[0].phonetics[0].text,
-        definition1: response.data[0].meanings[0].definitions[0].definition,
-        wordType1: response.data[0].meanings[0].partOfSpeech,
-        definition2: response.data[0].meanings[1].definitions[0].definition,
-        wordType2: response.data[0].meanings[1].partOfSpeech,
-      });
-     console.log(response.data)
+      setResponseData(response.data[0])
+      console.log(response.data[0])}
+      //   {
+      //   word: response.data[0].word,
+      //   phonetics: response.data[0].phonetics[0].text,
+      //   definition1: response.data[0].meanings[0].definitions[0].definition,
+      //   wordType1: response.data[0].meanings[0].partOfSpeech,
+      //   example1: response.data[0].meanings[0].definitions[0].example,
+      //   definition2: response.data[0].meanings[1].definitions[0].definition,
+      //   wordType2: response.data[0].meanings[1].partOfSpeech,
+      // };
+     
     // console.log(response.data[0].meanings[0].partOfSpeech);
    
-  }
+  
 
 
   return (

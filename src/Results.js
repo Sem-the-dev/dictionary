@@ -1,26 +1,30 @@
 import React from "react";
+import Meaning from './Meaning'
 
 export default function Results( {result} ) {
-    if(result.word){
-  return (
-    <div className="results-section">
-      <h3>{result.word}</h3>
-      <p className="phonetics">{result.phonetics}</p>
+  console.log(result.word);
 
-      <ul className="result-list">
-        <li>{result.wordType1}</li>
-        <li>{result.definition1}</li>
-        <br />
-        <li>
-          {result.wordType2}
-        </li>
-        <li>
-          {result.definition2}
-        </li>
-      </ul>
-    </div>
-  );}
-  else {
-      return null
+
+
+  if (result.word) {
+    return (
+      <div className="results-section">
+        <h3>{result.word}</h3>
+        
+        <p className="phonetics">{result.phonetics[0].text}</p>  
+         {result.meanings.map(function(meaning, index){
+        
+        return (
+          <div key={index}>
+              <Meaning meaning={meaning} /> 
+          </div>
+
+        )
+       })}
+  
+      </div>
+    );
+  } else {
+    return null;
   }
 }
