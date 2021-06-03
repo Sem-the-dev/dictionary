@@ -39,9 +39,12 @@ footer {
     padding: 0.5rem;
 }
 
+.audio {
+    border-radius: 94px;
+    border: none;
+}
 .phonetics {
    font-style: italic;
-   
 }
 
 .result-list {
