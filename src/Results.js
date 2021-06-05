@@ -18,7 +18,9 @@ export default function Results( {result} ) {
         {result.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
+              <section>
               <Meaning meaning={meaning} />
+              </section>
             </div>
           );
         })}

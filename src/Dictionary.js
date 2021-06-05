@@ -20,28 +20,21 @@ export default function Dictionary() {
   function handleResponse(response){
       setResponseData(response.data[0])
       console.log(response.data[0])}
-      //   {
-      //   word: response.data[0].word,
-      //   phonetics: response.data[0].phonetics[0].text,
-      //   definition1: response.data[0].meanings[0].definitions[0].definition,
-      //   wordType1: response.data[0].meanings[0].partOfSpeech,
-      //   example1: response.data[0].meanings[0].definitions[0].example,
-      //   definition2: response.data[0].meanings[1].definitions[0].definition,
-      //   wordType2: response.data[0].meanings[1].partOfSpeech,
-      // };
-     
-    // console.log(response.data[0].meanings[0].partOfSpeech);
-   
-  
+
 
 
   return (
     <div>
       <form onSubmit={searchDictionary}>
-        <input type="search" autoFocus={true} onChange={inputValue} />
+        <input
+          type="search"
+          autoFocus={true}
+          onChange={inputValue}
+          placeholder="What word are you looking for?"
+        />
       </form>
 
-      <Results result={responseData}/>
+      <Results result={responseData} />
     </div>
   );
 }
