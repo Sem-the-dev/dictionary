@@ -6,11 +6,7 @@ import Languages from './Languages'
 function App() {
   return (
     <div className="App" >
-      {/* <nav>
-        Languages
-        <Languages />
-      </nav> */}
-      <main>
+         <main>
         <h1>Dictionary</h1>
         <Dictionary />
       </main>

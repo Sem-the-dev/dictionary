@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import Results from './Results'
-// import Languages from "./Languages";
+import Photos from "./Photos";
+;
 
 export default function Dictionary() {
   const [searchWord, setSearchWord] = useState("");
   const [responseData, setResponseData] = useState("")
   const [language, setLanguage] = useState("en_GB");
+  const [photo, setPhoto] = useState([]);
 
 
   function changeLanguageEN(e) {
@@ -45,17 +47,29 @@ export default function Dictionary() {
 
   function searchDictionary(e) {
     e.preventDefault();
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/${language}/${searchWord}`;
-    axios.get(apiUrl).then(handleResponse);
+    let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/${language}/${searchWord}`;
+    axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+    let pexelsApiKey =
+      "563492ad6f917000010000018d9351ef436340f9acec5841b68eb407";
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${searchWord}&per_page=9`;
+    axios
+      .get(pexelsUrl, { headers: { Authorization: `Bearer ${pexelsApiKey}` } })
+      .then(handlePhotosResponse);
+
     
   }
   function inputValue(e) {
     setSearchWord(e.target.value);
   }
 
-  function handleResponse(response){
-      setResponseData(response.data[0])
-      console.log(response.data[0])}
+  function handleDictionaryResponse(response) {
+    setResponseData(response.data[0]);
+   
+  }
+    function handlePhotosResponse(response) {
+
+      setPhoto(response.data.photos);
+    }
 
 
   return (
@@ -85,27 +99,7 @@ export default function Dictionary() {
             onClick={changeLanguageES}
             className="language-button"
           />
-   
-        {/* <label>
-          <input
-            type="radio"
-            value="Arabic"
-            name="language"
-            onChange={changeLanguageAR}
-            className="language-button"
-          />
-          🇵🇸
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="Turkish"
-            name="language"
-            onChange={changeLanguageTR}
-            className="language-button"
-          />
-          🇹🇷
-        </label> */}
+
         <input
           type="search"
           autoFocus={true}
@@ -115,6 +109,8 @@ export default function Dictionary() {
         />
       </form>
       <Results result={responseData} />
+     <Photos photos={photo} />
+      
     </div>
   );
 }
