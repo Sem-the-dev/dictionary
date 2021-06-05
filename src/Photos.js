@@ -7,7 +7,6 @@ export default function Photos(props) {
         <section >
             <div className="row">
                 {props.photos.map(function(images, index){
-                console.log(props.photos)
             return (
               <div className="col-4 photos" key={index}>
                 <a href={images.src.landscape} target="_blank">
