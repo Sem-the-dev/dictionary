@@ -1,5 +1,5 @@
 # Dictionary app
-url: "https://sem-the-dev-dictionary.netlify.app"
+https://sem-the-dev-dictionary.netlify.app
 
 ## Installation 
 `npm instal`
