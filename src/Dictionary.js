@@ -4,7 +4,7 @@ import Results from './Results'
 import Photos from "./Photos";
 import Synonyms from "./Synonyms";
 
-;
+
 
 export default function Dictionary(props) {
   const [searchWord, setSearchWord] = useState("sunset");
@@ -62,12 +62,11 @@ export default function Dictionary(props) {
     axios
       .get(pexelsUrl, { headers: { Authorization: `Bearer ${pexelsApiKey}` } })
       .then(handlePhotosResponse);
-
-     
   }
+
   function inputValue(e) {
     setSearchWord(e.target.value);
-   
+  
   }
 
   function handleDictionaryResponse(response) {

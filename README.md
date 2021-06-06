@@ -1,5 +1,5 @@
 # Dictionary app
-url: 
+url: "https://sem-the-dev-dictionary.netlify.app"
 
 ## Installation 
 `npm instal`
@@ -16,6 +16,7 @@ url:
 - image search available in multiple langugae
 
 ## Future features
-- synonym word can be searched
+- synonym word can be searched on click
 - last searched
-- pagination
+- photo pagination
+- word not found

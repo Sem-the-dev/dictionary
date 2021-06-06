@@ -9,13 +9,10 @@ export default function Results( {result} ) {
   // useEffect(() => {
   //   setLastSearched(result.word)
   // }, [])
-  // sets the value of "message" in localStorage to be "saved in browser storage"
-  localStorage.setItem("message", result.word);
-  // returns "saved in browser storage"
-  console.log(localStorage.getItem("message"));
+ 
 
   if (result.word) {
-    console.log(result.word);
+   
     return (
       
       <div className="results-section">
