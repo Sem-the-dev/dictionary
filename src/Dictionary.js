@@ -10,6 +10,13 @@ export default function Dictionary(props) {
   const [searchWord, setSearchWord] = useState("sunset");
   const [responseData, setResponseData] = useState("");
   const [language, setLanguage] = useState("en_GB");
+  const [languageMessage, setLanguageMessage] = useState(
+    "Language set to English (GB) 🇬🇧 "
+  );
+  const [suggestedWords, setSuggestedWords] = useState(
+    "suggested words: sunset, yoga, wine"
+  );
+  
   const [photo, setPhoto] = useState([]);
   const [location, setLocation] = useState("");
   const [loaded, setLoaded] = useState(false)
@@ -19,12 +26,16 @@ export default function Dictionary(props) {
     alert("Language switched to English 🇬🇧 ");
     setLanguage("en_GB");
     setLocation("en-US");
+    setLanguageMessage("Language set to English (GB) 🇬🇧 ");
+    setSuggestedWords("suggested words: sunset, yoga, wine");
   }
   function changeLanguageFR(e) {
     e.preventDefault();
     alert("Language switched to French 🇫🇷 ");
     setLanguage("fr");
     setLocation("fr-FR");
+    setLanguageMessage("Language set to French 🇫🇷 ");
+    setSuggestedWords("mots suggérés: chat, plage, café");
   }
 
   function changeLanguageES(e) {
@@ -32,6 +43,8 @@ export default function Dictionary(props) {
     alert("Language switched to Spanish 🇪🇸");
     setLanguage("es");
     setLocation("es-ES");
+    setLanguageMessage("Language set to Spanish 🇪🇸 ");
+    setSuggestedWords("palabras sugeridas: noche, playa, casa");
   }
 
   function handleSubmit(e) {
@@ -82,6 +95,7 @@ export default function Dictionary(props) {
         onClick={changeLanguageEN}
         className="language-button"
       />
+     
       <input
         type="button"
         value="French 🇫🇷"
@@ -97,9 +111,9 @@ export default function Dictionary(props) {
         onClick={changeLanguageES}
         className="language-button"
       />
-
+   <p className="language-message">{languageMessage}</p>
       <form onSubmit={handleSubmit}>
-        
+     
         <input
           type="search"
           autoFocus={true}
@@ -107,7 +121,7 @@ export default function Dictionary(props) {
           className="search-bar"
         />
       </form>
-      <div className="hint">suggested words: sunset, yoga, wine </div>
+      <div className="hint">{suggestedWords}</div>
       <Results result={responseData} />
       <Photos photos={photo} />
       {/* <Synonyms synonyms={handleSynonym} /> */}
