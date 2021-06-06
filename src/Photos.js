@@ -4,7 +4,7 @@ import React from "react";
 export default function Photos(props) {
     if(props.photos){
     return (
-        <section >
+        <section className="photo-section">
             <div className="row">
                 {props.photos.map(function(images, index){
 

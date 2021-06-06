@@ -5,12 +5,16 @@
   --accent: #005a8d;
   --darker-accent: #022e57;
 }
+.App{
+  margin-bottom:5rem;
+  background-color: var(--background-color);
+height: 100%;
+}
 html {
   background-color: var(--background-color);
-  height: 100%;
+height: 100%;
 }
 main {
-  background-color: var(--background-color);
   text-align: center;
 }
 form {
@@ -19,7 +23,9 @@ form {
   justify-content: center;
 }
 .hint {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+    position: relative;
+    top: 1rem;
 }
 .language-button {
   border: 1px solid var(--accent);
@@ -32,7 +38,20 @@ form {
   transition: all 150ms ease-in-out;
   background: var(--accent);
 }
+
+.language-button:visited {
+  background: var(--darker-accent);
+  color: white;
+}
+.language-button:focus {
+  background: var(--darker-accent);
+  color: white;
+}
 .language-button:hover {
+  background: var(--darker-accent);
+  color: white;
+}
+.language-button:active {
   background: var(--darker-accent);
   color: white;
 }
@@ -69,17 +88,6 @@ section {
   padding: 1rem;
 }
 
-footer {
-  text-align: center;
-  display: inline;
-  position: fixed;
-  bottom: 0rem;
-  width: 100%;
-  background-color: var(--accent);
-  color: whitesmoke;
-  height: 6%;
-  padding: 0.5rem;
-}
 
 .audio {
   border-radius: 94px;
@@ -93,11 +101,13 @@ footer {
 .result-list {
   text-align: left;
   font-family: "Nanum Gothic", sans-serif;
-  color: #;
 }
-
+.meanings{
+margin:2rem
+}
 .word-type {
   opacity: 0.7;
+  font-size: 1rem;
 }
 .example {
   font-style: italic;
@@ -126,4 +136,25 @@ li {
 
 .photos img:hover {
   cursor: pointer;
+}
+.photo-section{
+  margin-bottom: 2rem
+}
+footer {
+  text-align: center;
+  position: relative;
+  bottom: 0rem;
+  width: 100%;
+  background-color: var(--accent);
+  color: var(--background-color);
+  height: 6%;
+  padding: 0.5rem;
+}
+.github-link{
+  text-decoration: none;
+  color: var(--background-color)
+}
+.github-link:hover {
+  cursor: pointer;
+  color: var(--card-color)
 }

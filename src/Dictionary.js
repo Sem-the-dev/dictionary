@@ -34,8 +34,13 @@ export default function Dictionary(props) {
     setLocation("es-ES");
   }
 
-  function searchDictionary(e) {
+  function handleSubmit(e) {
     e.preventDefault();
+    searchDictionary()
+    e.target.reset();
+  }
+  function searchDictionary() {
+    
     let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/${language}/${searchWord}`;
     axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
     let pexelsApiKey =
@@ -45,11 +50,11 @@ export default function Dictionary(props) {
       .get(pexelsUrl, { headers: { Authorization: `Bearer ${pexelsApiKey}` } })
       .then(handlePhotosResponse);
 
-    e.target.reset();
+     
   }
   function inputValue(e) {
     setSearchWord(e.target.value);
-    console.log(e);
+   
   }
 
   function handleDictionaryResponse(response) {
@@ -62,9 +67,13 @@ export default function Dictionary(props) {
   //   return (response.data[0].meanings[0].definitions[0].synonyms)
   // searchDictionary(e.target.innerText)
   // }
- 
+  function load(){
+    setLoaded(true)
+    searchDictionary()
+  }
+ if (loaded){
   return (
-    <div>
+    <div className="container">
       
       <input
         type="button"
@@ -89,7 +98,7 @@ export default function Dictionary(props) {
         className="language-button"
       />
 
-      <form onSubmit={searchDictionary}>
+      <form onSubmit={handleSubmit}>
         
         <input
           type="search"
@@ -103,5 +112,9 @@ export default function Dictionary(props) {
       <Photos photos={photo} />
       {/* <Synonyms synonyms={handleSynonym} /> */}
     </div>
-  );
+  )
+} else {
+    load()
+    return "Loading"
+  }
 }

@@ -11,10 +11,19 @@ return (
     <main>
       <h1>Dictionary</h1>
       <Dictionary />
-
-      
     </main>
-    <footer>Coded by sem-the-dev 👩🏾‍💻</footer>
+    <footer>
+      Coded by{" "}
+      <a
+        href="https://github.com/Sem-the-dev/dictionary"
+        target="_blank"
+        rel="noreferrer"
+        className="github-link"
+      >
+        sem-the-dev
+      </a>{" "}
+      👩🏾‍💻
+    </footer>
   </div>
 );
 }

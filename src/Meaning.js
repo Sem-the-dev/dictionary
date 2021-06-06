@@ -11,16 +11,16 @@ export default function Meaning({ meaning }) {
 
       {meaning.definitions.map(function (definition, index){
           return (
-            <div key={index}>
+            <div key={index} className="meanings">
               
               <p>{definition.definition}</p>
               <p className="example"> {definition.example}</p>
-              <br />
-              <Synonyms synonyms={definition.synonyms} />
+                <Synonyms synonyms={definition.synonyms} />
               <br />
               
             </div>
           );
+          
       })}
   
     </div>
